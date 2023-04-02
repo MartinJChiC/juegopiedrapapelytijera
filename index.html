@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+	<title>Piedra, papel, tijera</title>
+</head>
+<body>
+	<h1>Piedra, papel, tijera</h1>
+	<p>Selecciona tu jugada:</p>
+	<button onclick="jugar('piedra')">Piedra</button>
+	<button onclick="jugar('papel')">Papel</button>
+	<button onclick="jugar('tijera')">Tijera</button>
+	<p id="resultado"></p>
+
+	<script>
+		function jugar(jugadaUsuario) {
+			var jugadaComputadora = Math.random();
+			if (jugadaComputadora < 0.33) {
+				jugadaComputadora = "piedra";
+			} else if (jugadaComputadora < 0.66) {
+				jugadaComputadora = "papel";
+			} else {
+				jugadaComputadora = "tijera";
+			}
+
+			var resultado = "";
+			if (jugadaUsuario === jugadaComputadora) {
+				resultado = "Empate!";
+			} else if (jugadaUsuario === "piedra") {
+				if (jugadaComputadora === "papel") {
+					resultado = "Perdiste :(";
+				} else {
+					resultado = "Ganaste!";
+				}
+			} else if (jugadaUsuario === "papel") {
+				if (jugadaComputadora === "tijera") {
+					resultado = "Perdiste :(";
+				} else {
+					resultado = "Ganaste!";
+				}
+			} else if (jugadaUsuario === "tijera") {
+				if (jugadaComputadora === "piedra") {
+					resultado = "Perdiste :(";
+				} else {
+					resultado = "Ganaste!";
+				}
+			}
+			document.getElementById("resultado").innerHTML = resultado;
+		}
+	</script>
+</body>
+</html>
+Este código HTML contiene tres botones que representan las jugadas posibles (piedra, papel y tijera), y un campo de texto para mostrar el resultado. Cuando el usuario hace clic en uno de los botones, se llama a la función jugar con el valor de la jugada seleccionada. La función jugar genera una jugada aleatoria para la computadora y compara la jugada del usuario con la de la computadora para determinar el resultado. El resultado se muestra en el campo de texto.
+
+Espero que esto te sea útil. ¡Diviértete jugando!
+
+
+
+
+
